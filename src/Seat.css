@@ -1,0 +1,18 @@
+.seat {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+
+.occupied {
+  background: #2f62eb;
+}
+
+.unoccupied {
+  background: #dcdddf;
+}
+
+.selected {
+  background: #df3498;
+}
