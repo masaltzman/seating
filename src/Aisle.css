@@ -1,5 +1,6 @@
 .aisle {
-  float: left;
+/*  float: left; */
+  display: grid;
   width: 20px;
   height: 20px;
   margin: 5px;
@@ -7,5 +8,6 @@
   color: darkgrey;
   font-size: 10pt;
   font-weight: bold;
-  padding-top: 6px;
+  justify-content: center;
+  align-content: center;
 }

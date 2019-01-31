@@ -7,11 +7,13 @@ const seatClasses = {};
 seats.forEach((seat) => {
   // convert seat column letters to array indexes
   seat.seat = seat.seat.charCodeAt(0)- 'A'.charCodeAt(0);
+  // convert rows to zero-based
+  seat.row--;
 
   let seatClass = seatClasses[seat.class];
   if (!seatClass) {
     // create new seatClass if not already created
-    seatClass = {rows: [], firstRow: 9999999, rowSize: 0, rowWidth: 0, columns: []};
+    seatClass = {rows: [], firstRow: 9999999, rowWidth: 0, columns: []};
     seatClasses[seat.class] = seatClass; 
   }
 
@@ -25,11 +27,7 @@ seats.forEach((seat) => {
 
   // mark the column as a 'S'eat as opposed to an 'A'isle
   seatClass.columns[seat.seat] = 'S';
-  
-  // find the largest row
-  if (seat.row > seatClass.rowSize) {
-    seatClass.rowSize = seat.row;
-  }
+
 
   // find the first row
   if (seat.row < seatClass.firstRow) {
@@ -52,7 +50,8 @@ console.log('seatClasses:', Object.keys(seatClasses));
 Object.keys(seatClasses).forEach(scn => {
   console.log(scn, seatClasses[scn]);
   // mark the 'A'isles
-  let {rows, columns} = seatClasses[scn];
+  let {rows, columns, firstRow} = seatClasses[scn];
+  rows.splice(0, firstRow);
   rows.forEach(row => {
     for (let i = 0; i < row.length; i++) {
       if (row[i] === undefined) {

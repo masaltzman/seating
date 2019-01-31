@@ -4,7 +4,7 @@ import './Aisle.css';
 function Aisle(props) {
   const { rowNum } = props;
   return (
-    <span className='aisle'>{rowNum}</span>
+    <span className='aisle'>{rowNum+1}</span>
   );
 }
 

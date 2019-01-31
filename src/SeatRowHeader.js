@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import "./SeatRowHeader.css";
 
 class SeatRowHeader extends Component {
@@ -6,11 +6,11 @@ class SeatRowHeader extends Component {
     const { columns } = this.props;
     const A = 'A'.charCodeAt(0);
     return (
-    <div className='headerContainer'>
+    <Fragment>
       {columns.map((seatOrAisle, index) => seatOrAisle === 'S' 
-      ? <span className='header' key={index}>{String.fromCharCode(index + A)}</span>
-      : <span className='header' key={index}> </span>)  }
-    </div>
+      ? <span className='columnHeader' key={index}>{String.fromCharCode(index + A)}</span>
+      : <span className='columnHeader' key={index}> </span>)  }
+    </Fragment>
     );
   }
 }

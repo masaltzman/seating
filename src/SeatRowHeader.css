@@ -1,16 +1,12 @@
-.headerContainer {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.header {
-  float: left;
+.columnHeader {
+  display: grid;
   width: 20px;
   height: 20px;
   margin: 5px;
   color: darkgray;
   font-weight: bold;
   font-size: smaller;
+  justify-content: center;
+  align-content: center;
 }
